@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu Interactif</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+       <h1>Bienvenue au Quiz !</h1>
+       <form id="startForm">
+          <input type="text" id="pseudo" placeholder="Entrez votre pseudo" required>
+          <button type="submit" class="btn">Jouer</button>
+       </form>
+    <div class="images-container">
+        <img src="image1.jpg" alt="Jeu">
+        <img src="image2.jpg" alt="Jeu">
+    </div>
+    </div>
+
+    <script>
+        document.getElementById("startForm").addEventListener("submit", function(e){
+        e.preventDefault();
+        const pseudo = document.getElementById("pseudo").value;
+        localStorage.setItem("pseudo", pseudo);
+        window.location.href = "quiz.html";
+       });
+    </script>
+</body>
+</html>

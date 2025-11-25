@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="container">
+       <h2>Résultat du Quiz</h2>
+       <p id="message"></p>
+       <p>Score : <span id="score"></span> / 10</p>
+       <button onclick="rejouer()" class="btn">Rejouer</button>
+     </div>
+
+<script>
+const score = localStorage.getItem("score") || 0;
+document.getElementById("score").innerText = score;
+
+let message = "";
+if(score <= 3) message = "Dommage, essaie encore !";
+else if(score <= 7) message = "Pas mal, continue comme ça !";
+else message = "Félicitations ! Tu es un champion !";
+
+document.getElementById("message").innerText = message;
+
+function rejouer(){
+    window.location.href = "index.html";
+}
+</script>
+</body>
+</html>
